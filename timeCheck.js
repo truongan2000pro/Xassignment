@@ -1,17 +1,10 @@
-function missingNum(arr){
-  if(arr.includes(arr.length)){
-    let check = 0
-    for(let i =0 ; i < arr.length ; i ++){
-      if(!arr.includes(arr.length-arr[i])){
-        return arr.length-arr[i]
-      }
-  
+function validTime(a){
+    const splitedTime = a.split(':')
+    if(splitedTime[0]>24 || splitedTime[1]>59){
+        return false
     }
-  }
-  else{ 
-    return arr.length
-  }
-
+        return true
 }
-console.log(missingNum([0,1,2]))
-console.log(missingNum([3,1,0])) 
+console.log(validTime("24:40"))
+console.log(validTime("25:40"))
+console.log(validTime("24:60"))
